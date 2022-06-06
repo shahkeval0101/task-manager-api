@@ -1,0 +1,20 @@
+//3 videos left...Advance Postman, Hiding private data and task and user relationship
+const Task = require('./models/task')
+const User = require('./models/user')
+const main = async ()=>{
+    //Grab Name from ID,
+    //We have taken task and found user
+    // const task = await Task.findById('629a6e0973675b3a98e3cafd') // this is the task id and from this id we can know the owner who he created what if we want name of the user who created it
+    // await task.populate('owner').execPopulate() // will fetch the entire profile of the owner
+    // it will find the user who is associated with the task, and task.owner will be profile
+    // console.log(task.owner)
+    
+    //Grab all the task of particular owner
+    
+    //Get the user and find the task
+    const user = await User.findById('629a6d65013f622f4c5ebba9')//owner id
+    //find all tasks specifically created by this user and store them on user.tasks property and not stored on the database 
+    await user.populate('tasks').execPopulate()
+    console.log(user.tasks)//undefined and then value
+}
+main()
