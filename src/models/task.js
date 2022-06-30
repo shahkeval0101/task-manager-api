@@ -1,6 +1,4 @@
-const { Schema } = require('mongoose')
 const mongoose = require('mongoose')
-const validator = require('validator')
 
 const taskSchema = new mongoose.Schema({
         description:{
@@ -17,7 +15,7 @@ const taskSchema = new mongoose.Schema({
             require : true,
             ref : 'User'//model name to create the relationship, indvidual task will store  the id  of  the user created
             //create ref from this field to another model
-            //Now we can fetch the entire user whenever we hav access to individual user
+            //Now we can fetch the entire user whenever we hav access to individual task
         }
     },{
         timestamps : true

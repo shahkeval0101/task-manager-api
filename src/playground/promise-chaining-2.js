@@ -2,6 +2,13 @@ require('../db/mongoose')
 const Task = require('../models/task')
 
 
+///////////////////////////////////////////////
+// Promise chaining is a syntax that allows you 
+// to chain together multiple asynchronous tasks in a specific order. This is great for complex 
+// code where one asynchronous task needs to be performed after the completion of a 
+// different asynchronous task. 
+//////////////////////////////////////////////
+
     // Task.findByIdAndDelete('62975733bee6031e50b0f038').then((task)=>{
     //     console.log(task)
     //     return Task.countDocuments({completed : false})

@@ -22,7 +22,7 @@ MongoClient.connect(connectionURL, {useNewUrlParser:true}, (error, client)=>{//c
     const db = client.db(databaseName)//name of the db you want to manipulate
 
 //insert single document in users collection
-   
+//db.collection is used to get a reference to the collection you are tyring to manipulate   
    
     // db.collection('users').insertOne({
     //     _id:id,
@@ -126,10 +126,15 @@ MongoClient.connect(connectionURL, {useNewUrlParser:true}, (error, client)=>{//c
     // })
 
 //Updating document
-    
+
+////////////////////////////////////////////////
+// Promises provide a much needed 
+// alternative to the traditional callback pattern.     
+////////////////////////////////////////////////
 
     //Updating Name
-
+    // $set    Sets the value of a field in a document.
+    
     // db.collection('users').updateOne({ _id : new ObjectID("6296574fe3f40d1370164e0d")}, {
     //     $set:{//update the value
     //         name : "Mike"
@@ -141,6 +146,8 @@ MongoClient.connect(connectionURL, {useNewUrlParser:true}, (error, client)=>{//c
     // })
 
     //Incrementing age with specific value
+
+    // $inc = Increments the value of the field by the specified amount.
 
     // db.collection('users').updateOne({ _id : new ObjectID("6296574fe3f40d1370164e0d")}, {
     //     $inc:{//update the value

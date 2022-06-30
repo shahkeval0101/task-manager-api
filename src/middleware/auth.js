@@ -4,10 +4,12 @@ const User =  require('../models/user')
 //This will be used to authenticate all incoming request are valid or not
 //without middleware : new request => run route handler
 //with middleware : new request => do something => run route handler
-const auth = async (req, res, next)=>{
+//check weather user is authenticated or not
+const auth = async (req, res, next)=>{// next is signal to Express that function is done
     try{
         const token = req.header('Authorization').replace('Bearer','').trim()
-        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+        // process.env.JWT_SECRET
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || "thisismynewcourse")
         console.log(token,decoded)
 
         const user = await User.findOne({_id: decoded._id, 'tokens.token' :  token  })//This finds the associate user

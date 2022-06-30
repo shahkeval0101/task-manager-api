@@ -5,7 +5,7 @@ const userRouter = require('./routers/user')
 const taskRouter = require('./routers/task')
 const auth = require('./middleware/auth')
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 
 app.use(express.json())//parse incoming json as object so that we can directly use those object
