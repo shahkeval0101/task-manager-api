@@ -120,15 +120,14 @@ workflow of request to execute. <br>
 14. logout. <br>
 15. logout all user. <br>
 
-## Postman Steps
 ## Setting up postman for first time
-For sign up /users req
-Create environment - setup authToken variable 
-In global setup the heroku url
-Create Collection and add request /users - POST method and {{url}} variable
-Write test script to automate authToken
-Add body
-Click on collection add authorization as bearer token and value as {{authToken}}
-Put every authorization in params as inherit from parent
-Also write tests in login request
+1. For sign up /users req
+2. Create environment - setup authToken variable 
+3. In global setup the heroku url
+4. Create Collection and add request /users - POST method and {{url}} variable
+5. Write test script to automate authToken
+6. Add body
+7. Click on collection add authorization as bearer token and value as {{authToken}}
+8. Put every authorization in params as inherit from parent
+9. Also write tests in login request
 
